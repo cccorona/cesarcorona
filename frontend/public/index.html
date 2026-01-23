@@ -171,16 +171,28 @@
         }
         @keyframes titleGlow { 0%, 100% { text-shadow: 0 0 40px rgba(207, 170, 110, 0.3); } 50% { text-shadow: 0 0 60px rgba(207, 170, 110, 0.5), 0 0 80px rgba(207, 170, 110, 0.2); } }
         .hero-subtitle { font-family: var(--font-pixel); font-size: clamp(0.6rem, 2vw, 0.9rem); color: var(--gold); letter-spacing: 0.3em; margin-bottom: 40px; text-transform: uppercase; }
-        .hero-class { font-family: var(--font-body); font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 50px; max-width: 600px; }
-        .init-btn {
-            font-family: var(--font-pixel); font-size: 12px; padding: 18px 40px;
-            background: transparent; border: 3px solid var(--gold); color: var(--gold);
-            cursor: pointer; position: relative; overflow: hidden; transition: var(--transition-smooth);
-            text-transform: uppercase; letter-spacing: 0.2em;
+        .hero-class { font-family: var(--font-body); font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 40px; max-width: 600px; }
+        
+        /* HERO CTA GROUP */
+        .hero-cta-group { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 10px; }
+        .cta-primary {
+            font-family: var(--font-pixel); font-size: 11px; padding: 18px 35px;
+            background: var(--gradient-gold); border: none; color: var(--void-black);
+            cursor: pointer; transition: var(--transition-smooth); text-transform: uppercase;
+            letter-spacing: 0.15em; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+            box-shadow: var(--shadow-gold);
         }
-        .init-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--gradient-gold); transition: var(--transition-smooth); z-index: -1; }
-        .init-btn:hover { color: var(--void-black); box-shadow: var(--shadow-gold-strong); transform: translateY(-2px); }
-        .init-btn:hover::before { left: 0; }
+        .cta-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: var(--shadow-gold-strong), 0 10px 30px rgba(0,0,0,0.3); }
+        .cta-primary i { font-size: 14px; }
+        .cta-secondary {
+            font-family: var(--font-pixel); font-size: 11px; padding: 18px 35px;
+            background: transparent; border: 2px solid var(--gold-dark); color: var(--gold);
+            cursor: pointer; transition: var(--transition-smooth); text-transform: uppercase;
+            letter-spacing: 0.15em; display: inline-flex; align-items: center; gap: 10px;
+        }
+        .cta-secondary:hover { border-color: var(--gold); background: rgba(207, 170, 110, 0.1); transform: translateY(-2px); }
+        .cta-secondary i { font-size: 14px; }
+
         .gothic-divider {
             width: 200px; height: 30px; margin: 30px auto;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 30"><path d="M0 15 L50 15 L60 5 L70 15 L100 15 L130 15 L140 5 L150 15 L200 15" stroke="%23cfaa6e" stroke-width="1" fill="none"/><circle cx="100" cy="15" r="4" fill="%23cfaa6e"/><circle cx="60" cy="5" r="2" fill="%23cfaa6e"/><circle cx="140" cy="5" r="2" fill="%23cfaa6e"/></svg>') center no-repeat;
@@ -278,6 +290,65 @@
         .slider-dot { width: 12px; height: 12px; background: var(--charcoal-lighter); border: 2px solid var(--gold-dark); cursor: pointer; transition: var(--transition-smooth); }
         .slider-dot.active, .slider-dot:hover { background: var(--gold); }
 
+        /* CONTACT SECTION */
+        .contact-section {
+            padding: 100px 20px; text-align: center;
+            background: linear-gradient(180deg, transparent 0%, rgba(207, 170, 110, 0.03) 50%, transparent 100%);
+        }
+        .contact-container { max-width: 700px; margin: 0 auto; }
+        .contact-header { margin-bottom: 40px; }
+        .contact-icon {
+            width: 80px; height: 80px; margin: 0 auto 25px;
+            background: var(--gradient-gold); display: flex; align-items: center; justify-content: center;
+            font-size: 32px; color: var(--void-black); animation: iconFloat 3s ease-in-out infinite;
+        }
+        @keyframes iconFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .contact-title {
+            font-family: var(--font-gothic); font-size: clamp(1.8rem, 5vw, 2.8rem);
+            color: var(--gold); letter-spacing: 0.1em; margin-bottom: 15px;
+        }
+        .contact-subtitle {
+            font-family: var(--font-pixel); font-size: 10px; color: var(--text-muted);
+            letter-spacing: 0.2em; text-transform: uppercase;
+        }
+        .contact-content { background: var(--charcoal); border: 3px solid var(--gold-dark); padding: 40px; position: relative; }
+        .contact-content::before {
+            content: ''; position: absolute; top: -3px; left: -3px; right: -3px; bottom: -3px;
+            border: 1px solid var(--gold); pointer-events: none; opacity: 0.5;
+        }
+        .contact-description {
+            font-family: var(--font-body); font-size: 1.05rem; color: var(--text-secondary);
+            line-height: 1.9; margin-bottom: 35px;
+        }
+        .contact-description strong { color: var(--gold); }
+        .contact-cta-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+        .contact-cta-primary {
+            font-family: var(--font-pixel); font-size: 12px; padding: 20px 40px;
+            background: var(--gradient-gold); border: none; color: var(--void-black);
+            text-decoration: none; text-transform: uppercase; letter-spacing: 0.15em;
+            display: inline-flex; align-items: center; gap: 12px;
+            transition: var(--transition-smooth); box-shadow: var(--shadow-gold);
+        }
+        .contact-cta-primary:hover { transform: translateY(-3px) scale(1.03); box-shadow: var(--shadow-gold-strong), 0 15px 40px rgba(0,0,0,0.3); }
+        .contact-cta-primary i { font-size: 16px; }
+        .contact-cta-secondary {
+            font-family: var(--font-pixel); font-size: 12px; padding: 20px 40px;
+            background: transparent; border: 3px solid var(--charcoal-lighter); color: var(--text-secondary);
+            text-decoration: none; text-transform: uppercase; letter-spacing: 0.15em;
+            display: inline-flex; align-items: center; gap: 12px; transition: var(--transition-smooth);
+        }
+        .contact-cta-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+        .contact-cta-secondary i { font-size: 16px; color: #0A66C2; }
+        .contact-availability {
+            font-family: var(--font-pixel); font-size: 10px; color: var(--text-muted);
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .availability-dot {
+            width: 10px; height: 10px; background: #2ecc71; border-radius: 50%;
+            animation: availPulse 2s ease-in-out infinite;
+        }
+        @keyframes availPulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); } 50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(46, 204, 113, 0); } }
+
         /* FOOTER */
         .footer-section { padding: 60px 0 40px; border-top: 1px solid var(--charcoal-lighter); }
         .footer-title { font-family: var(--font-pixel); font-size: 12px; color: var(--gold); text-align: center; margin-bottom: 30px; letter-spacing: 0.2em; }
@@ -321,12 +392,18 @@
             .spotify-player-container { top: auto; bottom: 20px; right: 10px; left: 10px; width: auto; max-width: none; }
             .hero-section { padding-top: 140px; }
             .hero-frame { padding: 40px 20px; }
+            .hero-cta-group { flex-direction: column; gap: 15px; }
+            .cta-primary, .cta-secondary { width: 100%; justify-content: center; }
             .stat-panel { padding: 20px; }
             .inventory-grid { grid-template-columns: 1fr; }
             .slider-item { grid-template-columns: 1fr; gap: 30px; padding: 25px; text-align: center; }
             .slider-image { max-width: 200px; }
             .slider-content { align-items: center; }
             .slider-cta { width: 100%; justify-content: center; }
+            .contact-section { padding: 60px 15px; }
+            .contact-content { padding: 25px; }
+            .contact-cta-group { flex-direction: column; }
+            .contact-cta-primary, .contact-cta-secondary { width: 100%; justify-content: center; }
             .data-uplinks { flex-direction: column; align-items: center; }
             .uplink { width: 100%; max-width: 300px; justify-content: center; }
         }
@@ -400,7 +477,16 @@
                 <h1 class="hero-title">Augusto Corona</h1>
                 <p class="hero-subtitle">Senior Mobile Engineer</p>
                 <p class="hero-class">Veteran Mobile Architect specialized in modular architecture, secure payment integrations, and performance optimization for enterprise and startup environments.</p>
-                <button class="init-btn" onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})">Initialize System</button>
+                <div class="hero-cta-group">
+                    <a href="#contact" class="cta-primary">
+                        <i class="fas fa-scroll"></i>
+                        Start New Quest
+                    </a>
+                    <button class="cta-secondary" onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})">
+                        <i class="fas fa-eye"></i>
+                        View Stats
+                    </button>
+                </div>
                 <div class="gothic-divider"></div>
             </div>
         </section>
@@ -548,6 +634,40 @@
                     </div>
                 </div>
                 <div class="slider-nav"><div class="slider-dot active"></div></div>
+            </div>
+        </section>
+
+        <!-- Contact Section (CTA) -->
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <div class="contact-icon">
+                        <i class="fas fa-dungeon"></i>
+                    </div>
+                    <h2 class="contact-title">Accept New Quest?</h2>
+                    <p class="contact-subtitle">Ready to architect your next mobile adventure</p>
+                </div>
+                <div class="contact-content">
+                    <p class="contact-description">
+                        Looking for a <strong>Senior Mobile Architect</strong> to lead your Android/iOS project?
+                        <br>Need someone to refactor legacy code into a modular fortress?
+                        <br>Let's talk about your next quest.
+                    </p>
+                    <div class="contact-cta-group">
+                        <a href="mailto:ceccorona@gmail.com" class="contact-cta-primary">
+                            <i class="fas fa-envelope"></i>
+                            Send Message
+                        </a>
+                        <a href="https://www.linkedin.com/in/cesar-cabrera-corona-b1269775/" target="_blank" class="contact-cta-secondary">
+                            <i class="fab fa-linkedin"></i>
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                    <div class="contact-availability">
+                        <span class="availability-dot"></span>
+                        Available for new projects
+                    </div>
+                </div>
             </div>
         </section>
 
