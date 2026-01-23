@@ -700,6 +700,36 @@
         </footer>
     </main>
 
+    <!-- WhatsApp Modal -->
+    <div class="modal-overlay" id="whatsappModal">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeWhatsAppModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3 class="modal-title">Start New Quest</h3>
+                <p class="modal-subtitle">Send a message via WhatsApp</p>
+            </div>
+            <div class="modal-body">
+                <label class="modal-label">Your Message:</label>
+                <textarea class="modal-textarea" id="whatsappMessage" rows="4">Hola Augusto, vi tu portfolio y me gustaría hablar sobre un proyecto...</textarea>
+                <p class="modal-hint">Feel free to customize your message</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn-primary" onclick="sendWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    Open WhatsApp
+                </button>
+                <button class="modal-btn-secondary" onclick="closeWhatsAppModal()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Loading Screen
         window.addEventListener('load', function() {
