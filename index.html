@@ -815,6 +815,39 @@
             }, 2200);
         });
 
+        // WhatsApp Modal Functions
+        const whatsappModal = document.getElementById('whatsappModal');
+        const whatsappMessage = document.getElementById('whatsappMessage');
+
+        function openWhatsAppModal() {
+            whatsappModal.classList.add('visible');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeWhatsAppModal() {
+            whatsappModal.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+
+        function sendWhatsApp() {
+            const message = encodeURIComponent(whatsappMessage.value);
+            const phoneNumber = '5215522500279';
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+            closeWhatsAppModal();
+        }
+
+        // Close modal on overlay click
+        whatsappModal.addEventListener('click', function(e) {
+            if (e.target === whatsappModal) closeWhatsAppModal();
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && whatsappModal.classList.contains('visible')) {
+                closeWhatsAppModal();
+            }
+        });
+
         // Spotify Player Controls
         const playlistBtn = document.getElementById('playlistBtn');
         const audioToggle = document.getElementById('audioToggle');
