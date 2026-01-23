@@ -121,6 +121,10 @@ const Portfolio = () => {
       {/* Spotify Player */}
       <div className={`spotify-player-container ${showPlayer || audioOn ? 'visible' : ''}`}>
         <div className="spotify-player-wrapper">
+          <div className="spotify-player-label">
+            <i className="fab fa-spotify"></i>
+            <span>PRESS PLAY IN WIDGET</span>
+          </div>
           <iframe
             src="https://open.spotify.com/embed/playlist/7EC6ybszCLPQEcDgQrYyH0?utm_source=generator&theme=0"
             width="100%"
