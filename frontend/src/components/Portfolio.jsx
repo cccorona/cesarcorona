@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 const Portfolio = () => {
   const [audioOn, setAudioOn] = useState(false);
+  const [showPlayer, setShowPlayer] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
