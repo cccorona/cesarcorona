@@ -1042,6 +1042,15 @@ body {
         justify-content: flex-end;
     }
 
+    .spotify-player-container {
+        top: auto;
+        bottom: 20px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        max-width: none;
+    }
+
     .hero-section {
         padding-top: 140px;
     }
