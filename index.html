@@ -290,6 +290,65 @@
         .slider-dot { width: 12px; height: 12px; background: var(--charcoal-lighter); border: 2px solid var(--gold-dark); cursor: pointer; transition: var(--transition-smooth); }
         .slider-dot.active, .slider-dot:hover { background: var(--gold); }
 
+        /* CONTACT SECTION */
+        .contact-section {
+            padding: 100px 20px; text-align: center;
+            background: linear-gradient(180deg, transparent 0%, rgba(207, 170, 110, 0.03) 50%, transparent 100%);
+        }
+        .contact-container { max-width: 700px; margin: 0 auto; }
+        .contact-header { margin-bottom: 40px; }
+        .contact-icon {
+            width: 80px; height: 80px; margin: 0 auto 25px;
+            background: var(--gradient-gold); display: flex; align-items: center; justify-content: center;
+            font-size: 32px; color: var(--void-black); animation: iconFloat 3s ease-in-out infinite;
+        }
+        @keyframes iconFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .contact-title {
+            font-family: var(--font-gothic); font-size: clamp(1.8rem, 5vw, 2.8rem);
+            color: var(--gold); letter-spacing: 0.1em; margin-bottom: 15px;
+        }
+        .contact-subtitle {
+            font-family: var(--font-pixel); font-size: 10px; color: var(--text-muted);
+            letter-spacing: 0.2em; text-transform: uppercase;
+        }
+        .contact-content { background: var(--charcoal); border: 3px solid var(--gold-dark); padding: 40px; position: relative; }
+        .contact-content::before {
+            content: ''; position: absolute; top: -3px; left: -3px; right: -3px; bottom: -3px;
+            border: 1px solid var(--gold); pointer-events: none; opacity: 0.5;
+        }
+        .contact-description {
+            font-family: var(--font-body); font-size: 1.05rem; color: var(--text-secondary);
+            line-height: 1.9; margin-bottom: 35px;
+        }
+        .contact-description strong { color: var(--gold); }
+        .contact-cta-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+        .contact-cta-primary {
+            font-family: var(--font-pixel); font-size: 12px; padding: 20px 40px;
+            background: var(--gradient-gold); border: none; color: var(--void-black);
+            text-decoration: none; text-transform: uppercase; letter-spacing: 0.15em;
+            display: inline-flex; align-items: center; gap: 12px;
+            transition: var(--transition-smooth); box-shadow: var(--shadow-gold);
+        }
+        .contact-cta-primary:hover { transform: translateY(-3px) scale(1.03); box-shadow: var(--shadow-gold-strong), 0 15px 40px rgba(0,0,0,0.3); }
+        .contact-cta-primary i { font-size: 16px; }
+        .contact-cta-secondary {
+            font-family: var(--font-pixel); font-size: 12px; padding: 20px 40px;
+            background: transparent; border: 3px solid var(--charcoal-lighter); color: var(--text-secondary);
+            text-decoration: none; text-transform: uppercase; letter-spacing: 0.15em;
+            display: inline-flex; align-items: center; gap: 12px; transition: var(--transition-smooth);
+        }
+        .contact-cta-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+        .contact-cta-secondary i { font-size: 16px; color: #0A66C2; }
+        .contact-availability {
+            font-family: var(--font-pixel); font-size: 10px; color: var(--text-muted);
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .availability-dot {
+            width: 10px; height: 10px; background: #2ecc71; border-radius: 50%;
+            animation: availPulse 2s ease-in-out infinite;
+        }
+        @keyframes availPulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); } 50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(46, 204, 113, 0); } }
+
         /* FOOTER */
         .footer-section { padding: 60px 0 40px; border-top: 1px solid var(--charcoal-lighter); }
         .footer-title { font-family: var(--font-pixel); font-size: 12px; color: var(--gold); text-align: center; margin-bottom: 30px; letter-spacing: 0.2em; }
