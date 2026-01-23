@@ -104,15 +104,35 @@ const Portfolio = () => {
           </div>
         </div>
         <div className="hud-controls">
-          <a href="https://open.spotify.com/playlist/7EC6ybszCLPQEcDgQrYyH0" target="_blank" rel="noopener noreferrer" className="hud-btn">
+          <button className="hud-btn" onClick={() => setShowPlayer(!showPlayer)}>
             <i className="fab fa-spotify"></i>
-            <span>♫ CURATED PLAYLIST</span>
-          </a>
-          <button className="hud-btn audio-toggle" onClick={() => setAudioOn(!audioOn)} title="Toggle Audio">
-            <i className={audioOn ? 'fas fa-volume-high' : 'fas fa-volume-xmark'}></i>
+            <span>{showPlayer ? '✕ CLOSE' : '♫ PLAYLIST'}</span>
+          </button>
+          <button 
+            className={`hud-btn audio-toggle ${audioOn ? 'playing' : ''}`} 
+            onClick={() => setAudioOn(!audioOn)} 
+            title={audioOn ? 'Pause Music' : 'Play Music'}
+          >
+            <i className={audioOn ? 'fas fa-pause' : 'fas fa-play'}></i>
           </button>
         </div>
       </header>
+
+      {/* Spotify Player */}
+      <div className={`spotify-player-container ${showPlayer || audioOn ? 'visible' : ''}`}>
+        <div className="spotify-player-wrapper">
+          <iframe
+            src="https://open.spotify.com/embed/playlist/7EC6ybszCLPQEcDgQrYyH0?utm_source=generator&theme=0"
+            width="100%"
+            height="152"
+            frameBorder="0"
+            allowFullScreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            title="Spotify Playlist"
+          ></iframe>
+        </div>
+      </div>
 
       {/* Main Content */}
       <main className="main-container">
