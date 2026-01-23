@@ -171,16 +171,28 @@
         }
         @keyframes titleGlow { 0%, 100% { text-shadow: 0 0 40px rgba(207, 170, 110, 0.3); } 50% { text-shadow: 0 0 60px rgba(207, 170, 110, 0.5), 0 0 80px rgba(207, 170, 110, 0.2); } }
         .hero-subtitle { font-family: var(--font-pixel); font-size: clamp(0.6rem, 2vw, 0.9rem); color: var(--gold); letter-spacing: 0.3em; margin-bottom: 40px; text-transform: uppercase; }
-        .hero-class { font-family: var(--font-body); font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 50px; max-width: 600px; }
-        .init-btn {
-            font-family: var(--font-pixel); font-size: 12px; padding: 18px 40px;
-            background: transparent; border: 3px solid var(--gold); color: var(--gold);
-            cursor: pointer; position: relative; overflow: hidden; transition: var(--transition-smooth);
-            text-transform: uppercase; letter-spacing: 0.2em;
+        .hero-class { font-family: var(--font-body); font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 40px; max-width: 600px; }
+        
+        /* HERO CTA GROUP */
+        .hero-cta-group { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 10px; }
+        .cta-primary {
+            font-family: var(--font-pixel); font-size: 11px; padding: 18px 35px;
+            background: var(--gradient-gold); border: none; color: var(--void-black);
+            cursor: pointer; transition: var(--transition-smooth); text-transform: uppercase;
+            letter-spacing: 0.15em; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+            box-shadow: var(--shadow-gold);
         }
-        .init-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--gradient-gold); transition: var(--transition-smooth); z-index: -1; }
-        .init-btn:hover { color: var(--void-black); box-shadow: var(--shadow-gold-strong); transform: translateY(-2px); }
-        .init-btn:hover::before { left: 0; }
+        .cta-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: var(--shadow-gold-strong), 0 10px 30px rgba(0,0,0,0.3); }
+        .cta-primary i { font-size: 14px; }
+        .cta-secondary {
+            font-family: var(--font-pixel); font-size: 11px; padding: 18px 35px;
+            background: transparent; border: 2px solid var(--gold-dark); color: var(--gold);
+            cursor: pointer; transition: var(--transition-smooth); text-transform: uppercase;
+            letter-spacing: 0.15em; display: inline-flex; align-items: center; gap: 10px;
+        }
+        .cta-secondary:hover { border-color: var(--gold); background: rgba(207, 170, 110, 0.1); transform: translateY(-2px); }
+        .cta-secondary i { font-size: 14px; }
+
         .gothic-divider {
             width: 200px; height: 30px; margin: 30px auto;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 30"><path d="M0 15 L50 15 L60 5 L70 15 L100 15 L130 15 L140 5 L150 15 L200 15" stroke="%23cfaa6e" stroke-width="1" fill="none"/><circle cx="100" cy="15" r="4" fill="%23cfaa6e"/><circle cx="60" cy="5" r="2" fill="%23cfaa6e"/><circle cx="140" cy="5" r="2" fill="%23cfaa6e"/></svg>') center no-repeat;
